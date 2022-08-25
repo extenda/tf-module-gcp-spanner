@@ -23,3 +23,4 @@ This resource creates an isolated set of Cloud Spanner resources on which databa
 | num\_nodes | The number of nodes allocated to this instance. At most one of either node_count or processing_units can be present in terraform. | string | null | no |
 | processing\_units | The number of processing units allocated to this instance. At most one of processing_units or node_count can be present in terraform. | string | null | no |
 | project\_id | The ID of the project in which the resource belongs. | string | n/a | yes |
+| version\_retention\_period | The retention period for the database. The retention period must be between 1 hour and 7 days, and can be specified in days, hours, minutes, or seconds. For example, the values 1d, 24h, 1440m, and 86400s are equivalent. | string | 1h | no |
