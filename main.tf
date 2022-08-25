@@ -16,10 +16,11 @@ resource "google_spanner_database" "spanner_database" {
     db.name => db
   }
 
-  instance = google_spanner_instance.spanner_instance.name
-  name     = each.value.name
-  project  = var.project_id
-  ddl      = lookup(each.value, "ddl", null)
+  instance                 = google_spanner_instance.spanner_instance.name
+  name                     = each.value.name
+  project                  = var.project_id
+  version_retention_period = var.version_retention_period
+  ddl                      = lookup(each.value, "ddl", null)
 
   dynamic "encryption_config" {
     for_each = (lookup(each.value, "kms_key_name", "") != "") ? [each.value.kms_key_name] : []

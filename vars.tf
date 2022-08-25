@@ -50,3 +50,9 @@ variable databases {
   description = "The list of the database names, which cannot be changed after creation. Values are of the form [a-z][-a-z0-9]*[a-z0-9"
   default     = []
 }
+
+variable version_retention_period {
+  type        = string
+  description = "How long it will be possible to restore the database to a Point in Time. Min value 1h, max value 7d. For example, the values 1d, 24h, 1440m, and 86400s are equivalent."
+  default     = "1h"
+}
