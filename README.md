@@ -8,7 +8,7 @@ This resource creates an isolated set of Cloud Spanner resources on which databa
 
 | Name | Version |
 |------|---------|
-| google | ~> 3.89.0 |
+| google | ~> 4.38.0 |
 
 ## Inputs
 
