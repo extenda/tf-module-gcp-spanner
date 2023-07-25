@@ -1,10 +1,9 @@
 module spanner {
   source = "../"
 
-  project_id               = "project-id"
-  instance_name            = "unique-instance-name"
-  display_name             = "Display name for teh instance"
-  version_retention_period = "How long time to be able to restore instance to a point in time"
+  project_id    = "project-id"
+  instance_name = "unique-instance-name"
+  display_name  = "Display name for teh instance"
 
   databases = [
     {
@@ -15,7 +14,8 @@ module spanner {
       ]
     },
     {
-      name = "db-2"
+      name             = "db-2"
+      retention_period = "7d"
     },
   ]
 }
