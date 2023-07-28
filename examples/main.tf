@@ -14,8 +14,8 @@ module spanner {
       ]
     },
     {
-      name             = "db-2"
-      retention_period = "7d"
+      name                     = "db-2"
+      version_retention_period = "7d"
     },
   ]
 }
