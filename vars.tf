@@ -51,5 +51,5 @@ variable databases {
     dialect   = optional(string)
   }))
   description = "The list of the database names, which cannot be changed after creation. Values are of the form [a-z][-a-z0-9]*[a-z0-9"
-  default = []
+  default     = []
 }
