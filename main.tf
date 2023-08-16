@@ -20,7 +20,7 @@ resource "google_spanner_database" "spanner_database" {
   name                     = each.value.name
   database_dialect         = each.value.dialect
   project                  = var.project_id
-  version_retention_period = try(each.value.version_retention_period, "1h")
+  version_retention_period = try(each.value.version_retention_period, "7d")
   ddl                      = try(each.value.ddl, [])
 
   dynamic "encryption_config" {

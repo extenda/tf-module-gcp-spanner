@@ -46,9 +46,11 @@ variable force_destroy {
 }
 
 variable databases {
-  type = list(object({
-    name      = string
-    dialect   = optional(string)
+  type                       = list(object({
+    name                     = string
+    ddl                      = optional(list(string))
+    dialect                  = optional(string)
+    version_retention_period = optional(string)
   }))
   description = "The list of the database names, which cannot be changed after creation. Values are of the form [a-z][-a-z0-9]*[a-z0-9"
   default     = []
