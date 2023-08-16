@@ -15,6 +15,7 @@ This resource creates an isolated set of Cloud Spanner resources on which databa
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
 | databases | list(map(string)) | The list of the database names, which cannot be changed after creation. Values are of the form `[a-z][-a-z0-9]*[a-z0-9]` | [] | yes |
+| databases.dialect | The dialect used for the database (GOOGLE_STANDARD_SQL or POSTGRESQL)` | GOOGLE_STANDARD_SQL | no |
 | display\_name | The descriptive name for this instance as it appears in UIs. Must be unique per project and between 4 and 30 characters in length. | string | n/a | yes |
 | force\_destroy | The ID of the project in which the resource belongs. | bool | true | no |
 | instance\_config | The name of the instance's configuration which defines the geographic placement and replication of your databases in this instance. It determines where your data is stored. | string | "regional-europe-west1" | no |

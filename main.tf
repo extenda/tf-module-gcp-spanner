@@ -18,6 +18,7 @@ resource "google_spanner_database" "spanner_database" {
 
   instance                 = google_spanner_instance.spanner_instance.name
   name                     = each.value.name
+  database_dialect         = each.value.dialect
   project                  = var.project_id
   version_retention_period = try(each.value.version_retention_period, "1h")
   ddl                      = try(each.value.ddl, [])
@@ -29,6 +30,5 @@ resource "google_spanner_database" "spanner_database" {
     }
   }
   deletion_protection = lookup(each.value, "deletion_protection", false)
-
   depends_on = [google_spanner_instance.spanner_instance]
 }
