@@ -3,6 +3,7 @@ module spanner {
 
   project_id    = "project-id"
   instance_name = "unique-instance-name"
+  edition       = "STANDARD"
   display_name  = "Display name for teh instance"
 
   databases = [
