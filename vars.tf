@@ -3,6 +3,11 @@ variable instance_name {
   type        = string
 }
 
+variable edition {
+  description = "The edition selected for this instance. Different editions provide different capabilities at different price points. Possible values are: EDITION_UNSPECIFIED, STANDARD, ENTERPRISE, ENTERPRISE_PLUS."
+  type        = string
+}
+
 variable instance_config {
   description = "The name of the instance's configuration which defines the geographic placement and replication of your databases in this instance. It determines where your data is stored."
   type        = string

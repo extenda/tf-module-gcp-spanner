@@ -1,6 +1,7 @@
 resource "google_spanner_instance" "spanner_instance" {
   name             = var.instance_name
   project          = var.project_id
+  edition          = var.edition
   config           = var.instance_config
   display_name     = var.display_name
   num_nodes        = var.num_nodes
@@ -8,7 +9,6 @@ resource "google_spanner_instance" "spanner_instance" {
   processing_units = var.processing_units
   force_destroy    = var.force_destroy
 }
-
 
 resource "google_spanner_database" "spanner_database" {
   for_each = {
