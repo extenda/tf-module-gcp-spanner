@@ -8,7 +8,7 @@ resource "google_spanner_instance" "spanner_instance" {
   labels                       = var.instance_labels
   processing_units             = var.processing_units
   force_destroy                = var.force_destroy
-  default_backup_schedule_type = var.default_backup_schedule_type
+  default_backup_schedule_type = "NONE"
 }
 
 resource "google_spanner_database" "spanner_database" {
@@ -49,8 +49,6 @@ resource "google_spanner_backup_schedule" "full-backup" {
 
   spec {
     cron_spec {
-      //   0 2/12 * * * : every 12 hours at (2, 14) hours past midnight in UTC.
-      //   0 2,14 * * * : every 12 hours at (2,14) hours past midnight in UTC.
       //   0 2 * * *    : once a day at 2 past midnight in UTC.
       //   0 2 * * 0    : once a week every Sunday at 2 past midnight in UTC.
       //   0 2 8 * *    : once a month on 8th day at 2 past midnight in UTC.

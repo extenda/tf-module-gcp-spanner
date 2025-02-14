@@ -4,7 +4,6 @@
 
 This resource creates a spanner instance with optional databases and backup schedules.
 
-
 ## Providers
 
 | Name | Version |
@@ -21,7 +20,6 @@ This resource creates a spanner instance with optional databases and backup sche
 | databases.version_retention_period | The database version reteintion period | string | 7d | no
 | databases.ddl | A list of DDL statements to run inside the newly created database. Statements can create tables, indexes, etc. These statements execute atomically with the creation of the database | list | [] | no
 | display\_name | The descriptive name for this instance as it appears in UIs. Must be unique per project and between 4 and 30 characters in length. | string | n/a | yes |
-| default\_backup\_schedule\_type | If set to AUTOMATIC a default backup schedule will be created for every new database in the instance | string | NONE | no |
 | edition | The edition selected for this instance. Different editions provide different capabilities at different price points. Possible values are: EDITION_UNSPECIFIED, STANDARD, ENTERPRISE, ENTERPRISE_PLUS. | string | STANDARD | yes |
 | force\_destroy | When deleting a spanner instance, this boolean option will delete all backups of this instance. This must be set to true if you created a backup manually in the console. | bool | true | no |
 | instance\_config | The name of the instance's configuration which defines the geographic placement and replication of your databases in this instance. It determines where your data is stored. | string | "regional-europe-west1" | no |

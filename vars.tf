@@ -11,12 +11,6 @@ variable databases {
   default     = []
 }
 
-variable default_backup_schedule_type {
-  description = "Wether there should be a default daily backup schedule created for all databases in the instance. Possible values are: NONE, AUTOMATIC"
-  default     = "NONE"
-  type        = string
-}
-
 variable display_name {
   description = "The descriptive name for this instance as it appears in UIs. Must be unique per project and between 4 and 30 characters in length."
   type        = string
