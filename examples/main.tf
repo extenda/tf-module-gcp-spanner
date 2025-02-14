@@ -17,6 +17,7 @@ module spanner {
     {
       name                     = "db-2"
       version_retention_period = "7d"
+      backup_schedule          = "0 2 * * *"
     },
   ]
 }

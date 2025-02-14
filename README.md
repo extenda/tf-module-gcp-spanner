@@ -2,19 +2,20 @@
 
 ## Description
 
-This resource creates an isolated set of Cloud Spanner resources on which databases can be hosted.
+This resource creates a spanner instance with optional databases and backup schedules.
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| google | ~> 6.4.0 |
+| google | ~> 6.12.0 |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:-----:|
 | databases | list(map(string)) | The list of the database names and dialects, which cannot be changed after creation. Values are of the form `[a-z][-a-z0-9]*[a-z0-9]` | [] | yes |
+| databases.backup_schedule | Backup schedule for the database. Cron expression as a string like `"0 1 * * *"` (daily full backup at 1am). | string | "" | no |
 | databases.dialect | The dialect used for the database (GOOGLE_STANDARD_SQL or POSTGRESQL)` | string | GOOGLE_STANDARD_SQL | no
 | databases.version_retention_period | The database version reteintion period | string | 7d | no
 | databases.ddl | A list of DDL statements to run inside the newly created database. Statements can create tables, indexes, etc. These statements execute atomically with the creation of the database | list | [] | no
