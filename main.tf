@@ -44,8 +44,7 @@ resource "google_spanner_backup_schedule" "full-backup" {
   database = each.value.name
   project  = var.project_id
   name     = each.value.name
-
-  retention_duration = "604800s" // 7 days
+  retention_duration = each.value.backup_retention_duration == null ? "604800s" : each.value.backup_retention_duration
 
   spec {
     cron_spec {

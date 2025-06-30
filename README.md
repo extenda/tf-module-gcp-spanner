@@ -16,6 +16,7 @@ This resource creates a spanner instance with optional databases and backup sche
 |------|-------------|------|---------|:-----:|
 | databases | list(map(string)) | The list of the database names and dialects, which cannot be changed after creation. Values are of the form `[a-z][-a-z0-9]*[a-z0-9]` | [] | yes |
 | databases.backup_schedule | Backup schedule for the database. Cron expression as a string like `"0 1 * * *"` (daily full backup at 1am). | string | "" | no |
+| databases.backup_retention_duration | How long to keep backups in seconds like `"1209600s"` (14 days) | string | `"604800s"` (7 days) | no
 | databases.dialect | The dialect used for the database (GOOGLE_STANDARD_SQL or POSTGRESQL)` | string | GOOGLE_STANDARD_SQL | no
 | databases.version_retention_period | The database version reteintion period | string | 7d | no
 | databases.ddl | A list of DDL statements to run inside the newly created database. Statements can create tables, indexes, etc. These statements execute atomically with the creation of the database | list | [] | no
