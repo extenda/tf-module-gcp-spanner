@@ -15,9 +15,10 @@ module spanner {
       ]
     },
     {
-      name                     = "db-2"
-      version_retention_period = "7d"
-      backup_schedule          = "0 2 * * *"
+      name                      = "db-2"
+      version_retention_period  = "7d"
+      backup_schedule           = "0 2 * * *"
+      backup_retention_duration = "604800s" # 7 days in seconds
     },
   ]
 }
