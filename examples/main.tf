@@ -1,10 +1,15 @@
-module spanner {
+module "spanner" {
   source = "../"
 
-  project_id    = "project-id"
-  instance_name = "unique-instance-name"
-  edition       = "STANDARD"
-  display_name  = "Display name for teh instance"
+  project_id       = "project-id"
+  instance_name    = "unique-instance-name"
+  edition          = "STANDARD"
+  display_name     = "Display name for the instance"
+  processing_units = "100"
+  instance_config  = "regional-europe-west1"
+  force_destroy    = false
+
+
 
   databases = [
     {
